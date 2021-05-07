@@ -17,7 +17,10 @@ export class UsersService {
     },
   ];
 
-  constructor(private productsService: ProductsService, private configService: ConfigService) {}
+  constructor(
+    private productsService: ProductsService,
+    private configService: ConfigService,
+  ) {}
 
   findAll() {
     const apiKey = this.configService.get('API_KEY');
