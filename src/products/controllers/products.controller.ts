@@ -10,9 +10,8 @@ import {
   HttpStatus,
   HttpCode,
 } from '@nestjs/common';
-import { ParseIntPipe } from '../common/parse-int.pipe';
-import { CreateProductDto, UpdateProductDto } from './../dtos/products.dtos';
-
+import { ParseIntPipe } from '../../common/parse-int.pipe';
+import { CreateProductDto, UpdateProductDto } from '../dtos/products.dtos';
 import { ProductsService } from './../services/products.service';
 
 @Controller('products')
@@ -30,7 +29,7 @@ export class ProductsController {
 
   @Get('filter')
   getProductFilter() {
-    return `filter`;
+    return `yo soy un filter`;
   }
 
   @Get(':productId')
