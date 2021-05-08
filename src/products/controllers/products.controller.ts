@@ -36,9 +36,8 @@ export class ProductsController {
   }
 
   @Get(':productId')
-  @HttpCode(HttpStatus.ACCEPTED)
   @ApiOperation({ summary: 'Get a product' })
-  getOne(@Param('productId', ParseIntPipe) productId: number) {
+  getOne(@Param('productId') productId: string) {
     return this.productsService.findOne(productId);
   }
 
