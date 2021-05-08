@@ -10,7 +10,7 @@ import {
   ValidateNested,
   IsMongoId,
 } from 'class-validator';
-import { PartialType, ApiProperty } from '@nestjs/swagger';
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateCategoryDto } from './category.dtos';
 
 export class CreateProductDto {
