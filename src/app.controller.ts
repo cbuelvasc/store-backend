@@ -1,11 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, SetMetadata, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
+import { ApikeyGuard } from './auth/guards/apikey.guard';
+import { Public } from './auth/decorators/public.decorator';
 
+@UseGuards(ApikeyGuard)
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
+  @Public()
   getHello(): string {
     return this.appService.getHello();
   }
@@ -21,6 +25,7 @@ export class AppController {
   }
 
   @Get('/tasks/')
+  @Public()
   getTasks() {
     return this.appService.getTasks();
   }
