@@ -6,10 +6,9 @@ import { Request } from 'express';
 @ApiTags('auth')
 @Controller('auth')
 export class AuthController {
-
   @UseGuards(AuthGuard('local'))
   @Post('login')
-  login (@Req() req: Request) {
+  login(@Req() req: Request) {
     return req.user;
   }
 }

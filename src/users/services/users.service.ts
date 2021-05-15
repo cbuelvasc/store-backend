@@ -21,8 +21,8 @@ export class UsersService {
     return this.userModel.findById(id);
   }
 
-  async findByEmail(email: string){
-    return await this.userModel.findOne({email}).exec();
+  async findByEmail(email: string) {
+    return await this.userModel.findOne({ email }).exec();
   }
 
   async getOrdersByUser(userId: string) {
@@ -39,7 +39,7 @@ export class UsersService {
     const hashPassword = await bcrypt.hash(newModel.password, 10);
     newModel.password = hashPassword;
     const model = await newModel.save();
-    const {password, ...response} = model.toJSON();
+    const { password, ...response } = model.toJSON();
     return response;
   }
 
